@@ -165,7 +165,7 @@
 																					GROUP BY `idMedicionGlobal`, `idMedicion`, `idHospital`) AS mediciones
 																					ON h.idHospital = mediciones.idHospital
 																					WHERE h.idHospital != 1) AS data
-																				GROUP  BY data.nombre
+																				GROUP  BY data.idHospital, data.nombre
 																				ORDER BY data.idHospital;";
 																		$result = $con->query($sql);
 																		$acc = 1;
@@ -213,8 +213,8 @@
 																					GROUP BY `idMedicionGlobal`, `idMedicion`, `idHospital`) AS mediciones
 																					ON h.idHospital = mediciones.idHospital
 																					WHERE h.idHospital != 1) AS data
-																				GROUP  BY data.nombre
-																				ORDER BY data.idHospital;";
+																				GROUP  BY data.idHospital, data.nombre
+																				ORDER BY data.idHospital";
 																		$result = $con->query($sql);
 																		$acc = 1;
 																		while($row = $result->fetch_assoc()){

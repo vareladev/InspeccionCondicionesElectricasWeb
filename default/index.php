@@ -127,8 +127,8 @@
 																				AND m.idMedicionGlobal = v.idMedicionGlobal
 																				AND m.idMedicion = v.idMedicion
 																				AND (v.tipo = 2 OR v.tipo = 4 OR v.tipo = 5 OR v.tipo = 6)
-																			GROUP BY m.idMedicionGlobal,m.idMedicion
-																			ORDER BY m.fecha2 ASC) medambdetail																	";
+																			GROUP BY h.nombre, a.nombreArea, u.nombre, m.fecha2, m.hora, m.idMedicionGlobal,m.idMedicion
+																			ORDER BY m.fecha2 ASC) medambdetail";
 																	$result = $con->query($sql);
 
 																	if ($result->num_rows > 0) {

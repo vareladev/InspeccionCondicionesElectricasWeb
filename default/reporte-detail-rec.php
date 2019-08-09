@@ -148,8 +148,6 @@
                                 <!-- Page-body start -->
                                 <div class="page-body">
                                     <div class="row">
-
-                                        <div class="col-sm-12">
 												<!-- Basic table card start -->
 												<div class="card">
 													<div class="card-header">

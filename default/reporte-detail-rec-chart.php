@@ -7,8 +7,8 @@
 	$values_vneutrotierra = get_param_recelec_data($_GET['idh'],"vneutrotierra");
 	$values_vfasetierra = get_param_recelec_data($_GET['idh'],"vfasetierra");
 	$values_total = array_fill(0, 2, 0);
-	$values_total[0] = $values_polaridad[0] + $values_vfaseneutro[0] + $values_vneutrotierra[0] + $values_vfasetierra[0];
-	$values_total[1] = $values_polaridad[1] + $values_vfaseneutro[1] + $values_vneutrotierra[1] + $values_vfasetierra[1];
+	$total_t = $values_total[0] = $values_polaridad[0] + $values_vfaseneutro[0] + $values_vneutrotierra[0] + $values_vfasetierra[0];
+	$total_f = $values_total[1] = $values_polaridad[1] + $values_vfaseneutro[1] + $values_vneutrotierra[1] + $values_vfasetierra[1];
 	
 	echo "
 		google.charts.load('current', {'packages':['corechart']});
@@ -19,8 +19,8 @@
 		//datos para general
 		var data_tot = google.visualization.arrayToDataTable([
 		  ['Cumplimiento', 'Cantidad'],
-		  ['Cumple (".get_percentage_recelec($values_total,0)."%)', ".$values_total[0]."],
-		  ['No cumple (".get_percentage_recelec($values_total,1)."%)', ".$values_total[1]."],
+		  ['Cumple (".get_percentage_recelec($values_total,0)."%)', ".$total_t."],
+		  ['No cumple (".get_percentage_recelec($values_total,1)."%)', ".$total_f."],
 		]);
 		var options_tot = {
 		  title: 'Revisión general',
@@ -66,7 +66,7 @@
 		  is3D: true
 		};
 		var chart_vneutrotierra = new google.visualization.PieChart(document.getElementById('piechart_vneutrotierra'));
-		chart_vneutrotierra.draw(data_vfaseneutro, options_vfaseneutro);
+		chart_vneutrotierra.draw(data_vneutrotierra, options_vneutrotierra);
 		
 		//datos para vfasetierra
 		var data_vfasetierra = google.visualization.arrayToDataTable([

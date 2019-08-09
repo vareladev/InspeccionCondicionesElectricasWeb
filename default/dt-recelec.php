@@ -141,8 +141,8 @@
 																					AND m.idMedicionGlobal = v.idMedicionGlobal
 																					AND m.idMedicion = v.idMedicion
 																					AND v.tipo = 1
-																				GROUP BY m.idMedicionGlobal,m.idMedicion
-																				ORDER BY m.fecha2 ASC;';
+																				GROUP BY h.nombre, a.nombreArea, u.nombre, m.fecha2, m.hora, m.idMedicionGlobal,m.idMedicion
+																				ORDER BY m.fecha2 ASC';
 																		
 																		$result = $con->query($sql);
 
