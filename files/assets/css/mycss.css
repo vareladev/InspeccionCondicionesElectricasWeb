@@ -1,0 +1,37 @@
+.centerinrow {
+	text-align: center; 
+	vertical-align: middle; 
+	position: relative;
+}
+
+.graph-wrapper { 
+  border : 2px solid #000; 
+  overflow:hidden;
+}
+
+.graph-wrapper div {
+   min-height: 200px;
+}
+#one {
+  background-color: gray;
+  float:left; 
+  margin-right:20px;
+  width:50%;
+  border-right:2px solid #000;
+}
+#two { 
+  background-color: white;
+  overflow:hidden;
+  margin:10px;
+  min-height:50%;
+}
+
+@media screen and (max-width: 400px) {
+   #one { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;    
+  }
+}
