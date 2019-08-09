@@ -102,8 +102,7 @@
                                         <div class="col-lg-8">
                                             <div class="page-header-title">
                                                 <div class="d-inline">
-                                                    <h4>Registro de verificaciones de condiciones ambientales</h4>
-                                                    <span>Iluminación, Ruido, Temperatura y Humedad relativa</span>
+                                                    <h4>Historial de actividades</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,7 +122,8 @@
                                                         <table id="simpletable" class="table table-striped nowrap" style="width=90%;">
                                                             <thead>
                                                             <tr>
-																<th><center>actividad de usuarios</center></th>
+																<th><center>id</center></th>
+																<th><center>Registros</center></th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -134,7 +134,8 @@
                                                             </tbody>
                                                             <tfoot>
                                                             <tr>
-																<th><center>Correlativo</center></th>
+																<th><center>id</center></th>
+																<th><center>Registros</center></th>
                                                             </tr>
                                                             </tfoot>
                                                         </table>

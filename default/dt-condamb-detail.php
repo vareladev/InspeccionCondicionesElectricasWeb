@@ -144,7 +144,7 @@
 													<?php
 														echo '
 															<div class="card-block">
-																<a href="http://dei.uca.edu.sv/webservice/seguridad-electrica/default/dt-condamb.php">
+																<a href="dt-condamb.php">
 																	<button class="btn btn-primary">Regresar</button>
 																</a>
 															</div>
@@ -274,7 +274,7 @@
 													<?php
 														echo '
 															<div class="card-block">
-																<a href="http://dei.uca.edu.sv/webservice/seguridad-electrica/default/dt-condamb.php">
+																<a href="dt-condamb.php">
 																	<button class="btn btn-primary">Regresar</button>
 																</a>
 															</div>

@@ -11,11 +11,11 @@
 			<li class="">
 				<a href="export.php">
 					<span class="pcoded-micon"><i class="feather icon-layers"></i></span>
-					<span class="pcoded-mtext">Reportes</span>
+					<span class="pcoded-mtext">Análisis</span>
 				</a>
 			</li>
 			<li class=" ">
-				<a href="javascript:void(0)">
+				<a href="actividad-usuarios-2.php">
 					<span class="pcoded-micon"><i class="feather icon-cloud"></i></span>
 					<span class="pcoded-mtext">Actividades</span>
 				</a>

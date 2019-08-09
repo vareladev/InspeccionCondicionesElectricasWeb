@@ -1,16 +1,19 @@
 <?php
-	/*
-	$tipo, $parametro
-		2-iluminacion ambiental
-		4-ruido ambiental
-		5-temperatura ambiental
-		6-humedad relativa ambiental
-	$idg = id medicion global
-	$id = id medicion
-	$estandar = definición de estándar
+	function get_project_progress(){
+		$date1 = new DateTime("2019-01-31");
+		$date2 = new DateTime("2019-10-31");
+		$today = new DateTime(date("Y-m-d"));
+		//total de dias del proyeto
+		$tiempo_total = $date1->diff($date2);
+		//total de dias de avance del proyecto
+		$tiempo_parcial = $date1->diff($today);
+		//dividiendo:
+		if($tiempo_parcial->days < $tiempo_total->days){
+			return round(($tiempo_parcial->days / $tiempo_total->days) * 100,1);
+		}
+		return 100;
+	}
 	
-	
-	*/
 	function paramelecreport($idg, $id){
 		$rcontador = 1;
 		include 'sql-open.php';
@@ -230,6 +233,7 @@
 		$stmt->execute();
 		$result = $stmt->get_result();
 		if($result->num_rows> 0) {
+			$correl = 1;
 			while($row = $result->fetch_assoc()) {
 				$tiporeporte = "";
 				if($row["tipo"] == 1)
@@ -237,25 +241,27 @@
 				else
 					$tiporeporte = "seguridad eléctrica";
 				
-				
 				echo '
-				<tr class=" user-activity-card card-block"><td style="background-color: white; width=90%;">
-							<div class="row">
-								<div class="col-auto p-r-0">
-									<div class="u-img">
-										<img src="..\files\assets\images\breadcrumb-bg.jpg" alt="user image" class="img-radius cover-img">
-										<img src="..\files\assets\images\avatar-2.jpg" alt="user image" class="img-radius profile-img">
-									</div>
-								</div>
-								<div class="col">
-									<h6 class="m-b-5">'.$row["usuario"].'</h6>
-									<p class="text-muted m-b-0">Agregó un reporte de '.$tiporeporte.'.</p>
-									<p class="text-muted m-b-0"><i class="feather icon-clock m-r-10"></i>'.$row["fechasincro"].'</p>
+				<tr class=" user-activity-card card-block">
+					<td style="background-color: white; width=10px; "><center>'.$correl.'</center></td>
+					<td style="background-color: white; width=90%;">
+						<div class="row">
+							<div class="col-auto p-r-0">
+								<div class="u-img">
+									<img src="..\files\assets\images\breadcrumb-bg.jpg" alt="user image" class="img-radius cover-img">
+									<img src="..\files\assets\images\avatar-2.jpg" alt="user image" class="img-radius profile-img">
 								</div>
 							</div>
-
-				</tr></td>
+							<div class="col">
+								<h6 class="m-b-5">'.$row["usuario"].'</h6>
+								<p class="text-muted m-b-0">Agregó un reporte de '.$tiporeporte.'.</p>
+								<p class="text-muted m-b-0"><i class="feather icon-clock m-r-10"></i>'.$row["fechasincro"].'</p>
+							</div>
+						</div>
+					</td>
+				</tr>
 				';
+				$correl += 1;
 			}
 			
 			echo '</div> </div>';

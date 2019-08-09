@@ -95,7 +95,7 @@
                                                     <div class="card-block">
                                                         <div class="row align-items-end">
                                                             <div class="col-8">
-                                                                <h4 class="text-white">21%</h4>
+                                                                <h4 class="text-white"><?php echo get_project_progress()."%";?></h4>
                                                                 <h6 class="text-white m-b-0">Progreso</h6>
                                                             </div>
                                                             <div class="col-4 text-right">
@@ -262,7 +262,7 @@
                                                                                 <p class="text-muted m-b-0">Iluminación, Ruido, Temperatura y Humedad relativa</p>
                                                                             </div>
                                                                         </td>
-                                                                        <td class="text-c-blue">Ver</td>
+                                                                        <td class="text-c-blue"><a href="dt-condamb.php">Ver</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
@@ -271,7 +271,7 @@
                                                                                 <p class="text-muted m-b-0">Tomas de corriente</p>
                                                                             </div>
                                                                         </td>
-                                                                        <td class="text-c-blue">Ver</td>
+                                                                        <td class="text-c-blue"><a href="dt-recelec.php">Ver</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>
@@ -280,13 +280,11 @@
                                                                                 <p class="text-muted m-b-0">Seguridad en equipo médico</p>
                                                                             </div>
                                                                         </td>
-                                                                        <td class="text-c-blue">Ver</td>
+                                                                        <td class="text-c-blue"><a href="dt-segelec.php">Ver</a></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
-                                                            <div class="text-center">
-                                                                <a href="#!" class=" b-b-primary text-primary">Ver todo</a>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
